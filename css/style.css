@@ -1,0 +1,26 @@
+:root {
+    --dark-color:rgb(2, 129, 112);
+    --medium-color:rgb(33, 185, 165);
+    --light-color:rgb(132, 241, 227);
+}
+
+*{
+    margin: 0.1;
+    padding: 10;
+    box-sizing: border-box;
+
+}
+body{
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: rgb(3, 196, 196);
+    padding: 2rem;
+}
+
+.header {
+    height: 95vh;
+    background-image: linear-gradient(to right bottom, var(--light-color), var(--medium-color)),url('../img/pexels-jess-vide-5006602.jpg');
+    background-size: cover;
+    background-position: top;
+}
