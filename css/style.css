@@ -1,26 +1,121 @@
 :root {
-    --dark-color:rgb(2, 129, 112);
-    --medium-color:rgb(33, 185, 165);
-    --light-color:rgb(132, 241, 227);
+    --dark-color:rgba(2, 129, 112, 0.226);
+    --medium-color:rgba(33, 185, 165, 0.308);
+    --light-color:rgba(132, 241, 226, 0.479);
 }
 
-*{
-    margin: 0.1;
-    padding: 10;
-    box-sizing: border-box;
-
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box; 
 }
-body{
+
+body {
     font-family: 'Lato', sans-serif;
     font-size: 1rem;
     line-height: 1.7;
-    color: rgb(3, 196, 196);
+    color: rgba(11, 73, 207, 0.418);
     padding: 2rem;
 }
 
 .header {
     height: 95vh;
-    background-image: linear-gradient(to right bottom, var(--light-color), var(--medium-color)),url('../img/pexels-jess-vide-5006602.jpg');
+    background-image: linear-gradient(to bottom right, 
+    var(--light-color), var(--medium-color)), url('../img/pexels-jess-vide-5006602.jpg');
     background-size: cover;
     background-position: top;
+    clip-path: polygon(0 29%, 0 0, 35% 0%, 65% 0%, 100% 0, 100% 32%, 100% 61%, 100% 100%, 61% 100%, 41% 96%, 21% 80%, 7% 62%);
+}
+
+.btn {
+    position: absolute;
+    top: 90%;
+    left: 30%;
+    color: white;
+    text-decoration: none;
+    border: 4px solid white;
+    padding: 1rem;
+    margin: 2rem;
+    opacity: 0;
+    animation-name: btn;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-delay: 3s;
+}
+
+.logo-box {
+    position: absolute;
+    top: 6%;
+    left: 3%;
+}
+
+.logo {
+    height: 1.7rem;
+}
+
+.text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.heading-primary {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.heading-primary-main {
+    display: block;
+    font-size: 5rem;
+    letter-spacing: 1.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    80% {
+        transform: translateX(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.heading-primary-sub {
+    display: block;
+    font-size: 2rem;
+    letter-spacing: 0.5rem;
+    animation-name: moveInRight;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px)
+    }
+
+    80% {
+        transform: translateX(-10px)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes btn {
+    0% {opacity: 0}
+    100% {opacity:100}
 }
